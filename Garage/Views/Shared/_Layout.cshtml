@@ -1,0 +1,103 @@
+﻿@using Garage.Models;
+
+@{
+    var User = (Users)Session["User"];
+    if (User != null)
+    {
+        ViewBag.UserLoggedIn = User.Username;
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Style/Layout.css" rel="stylesheet" />
+    <link href="~/Style/Details.css" rel="stylesheet" />
+    <link href="~/custom/ProfileSettings.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <!-- Start WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="../../slider/engine1/style.css" />
+    <script type="text/javascript" src="../../slider/engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <!-- Start WOWSlider.com BODY section -->
+            <div id="wowslider-container1">
+                <div class="ws_images">
+                    <ul>
+                        <li><img src="../../slider/data1/images/1.jpg" alt="1" title="1" id="wows1_0" /></li>
+                        <li><img src="../../slider/data1/images/2.jpg" alt="2" title="2" id="wows1_1" /></li>
+                        <li><img src="../../slider/data1/images/3.jpg" alt="3" title="3" id="wows1_2" /></li>
+                        <li><img src="../../slider/data1/images/4.jpg" alt="4" title="4" id="wows1_3" /></li>
+                        <li><a href="http://wowslider.com/vi"><img src="../../slider/data1/images/5.jpg" alt="bootstrap carousel" title="5" id="wows1_4" /></a></li>
+                        <li><img src="../../slider/data1/images/6.jpg" alt="6" title="6" id="wows1_5" /></li>
+                    </ul>
+                </div>
+                <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com/vi">css slider</a> by WOWSlider.com v7.9</div>
+                <div class="ws_shadow"></div>
+            </div>
+            <script type="text/javascript" src="../../slider/engine1/wowslider.js"></script>
+            <script type="text/javascript" src="../../slider/engine1/script.js"></script>
+            <!-- End WOWSlider.com BODY section -->
+            <div class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">                                             
+                            <li><a href="~/Home/Index">Workshop</a></li>
+                            <li><a href="~/Home/About">About</a></li>
+                            @if (User != null)
+                            {
+                                if (User.isAdmin == true)
+                                {
+                                    <li><a href="~/Home/Management">Management</a></li>
+                                    <li><a href="~/Home/Parts">Parts</a></li>
+                                }
+                            }
+                            
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
+                            @if (ViewBag.UserLoggedIn != null)
+                            {
+                                <li><a href="#">@ViewBag.UserLoggedIn</a></li>
+                                <li><a href="~/ProfileSettings/Settings">Profile</a></li>
+                                <li><a href="~/Cart/GetCart">My Cart</a></li>
+                                <li><a href="~/Home/SignOut">Sign Out</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="~/Home/SignIn">Sign In</a></li>
+                                <li><a href="~/Home/SignUp">Sign Up</a></li>
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/custom/ProfileSettings.js"></script>
+    </div>
+</body>
+</html>

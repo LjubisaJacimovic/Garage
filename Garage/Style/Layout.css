@@ -1,0 +1,151 @@
+﻿body {
+      background-color: lavender;
+      padding-top: 20px;
+}
+.navbar{
+    background: linear-gradient(to top, #c2bcb5, #ffffff);
+    border:0px;
+    z-index:1000;
+    margin-top:30px;
+}
+
+.nav li a{
+    color:black !important;
+}
+.nav li a:hover{
+    color:grey !important;
+}
+
+#wrapper {
+    width: 1200px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: white;
+
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.mouse {
+    width: 550px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+.part {
+    margin-left: 430px;
+}
+
+.car {
+    width: 400px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+.move {
+    margin-left: 510px;
+}
+
+.delovi {
+    width: 600px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+.product {
+    width: 1100px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+.buy {
+    width: 1100px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 12px 10px 20px #333;
+}
+
+.pro {
+    width: 1100px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+.tip {
+    margin-left: 240px;
+}
+
+.App {
+     margin-left: 230px;
+}
+
+.type {
+    width: 500px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+.man {
+    width: 700px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+.back {
+    width: 700px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+.are {
+    width: 1060px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+.you {
+    width: 500px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #333;
+}
+
+
+
+
+
+

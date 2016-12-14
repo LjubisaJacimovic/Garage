@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Garage.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Workshop</h2>
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-3" style="margin-top:20px;">
+        <a href="~/Home/Details/@item.Id"><img src="../../Images/@item.Image" alt="@item.Name" style="width: 150px; height: 150px;" /></a>
+        <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+        Price: $@Html.DisplayFor(modelItem => item.Price)
+    </div>
+}
+

@@ -1,0 +1,53 @@
+﻿@model Garage.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2></h2>
+@using (Html.BeginForm("Details", "Home", new { productId = Model.Id }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div style="margin-top: 50px">
+        <img src="../../Images/@Model.Image" alt="Alternate Text" style="width: 500px" />
+        <div style="display: inline-block; margin-left: 100px;">
+            <h2>@Model.Name</h2>
+            <hr/>
+        </div>
+
+        <div class="cena">
+            <b>Price:</b> $@Html.DisplayFor(model => model.Price)
+        </div>
+
+        <div class="text">
+            <strong>Description:</strong> @Html.DisplayFor(model => model.Description)
+        </div>
+    </div>
+    
+        <div class="kolicina">
+        @Html.DisplayFor(model => model.ProductType.Name)
+        <select class="selectpicker prodQuantity" name="amount" data-size="auto">
+            <optgroup label="Quantity">
+                @for (var i = 0; i <= 50; i++)
+                {
+                    <option>@i</option>
+                }
+            </optgroup>
+        </select>
+        <hr />
+    </div>
+
+    <input type="submit" value="Add Product" class="btn btn-default btn-success" style="margin-left: 90%" />
+    if (ViewBag.Message != null)
+    {
+        <div style="margin-left:85%; color:green">
+            <h5>@ViewBag.Message</h5>
+        </div>
+
+    }
+}
+
+<p>
+    @Html.ActionLink("Back", "Index", new { @class = "btn btn-warning" })
+</p>
+

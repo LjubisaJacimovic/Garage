@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Garage.Models.ProductType>
+
+@{
+    ViewBag.Title = "Parts";
+}
+
+<div class="delovi">
+    <div class="tip">
+        <h2>Parts</h2>     
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a href="~/Delovi/Edit/@item.Id" class="btn btn-warning">Edit</a>
+                    <a href="~/Delovi/Details/@item.Id" class="btn btn-primary">Details</a>|
+                    <a href="~/Delovi/Delete/@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div class="App">
+        <p>
+            <a href="~/Delovi/Create" class="btn btn-success">Add Product</a>
+        </p>
+    </div>
+</div>

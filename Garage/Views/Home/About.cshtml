@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>About</h2>
+
+
+<div>
+    <marquee style="color: blue;">We are delivered and Welcom to: www.bube_jac.yahoo.com</marquee>
+    <div id="MyDate">@ViewBag.MyDate</div>
+    @Html.ActionLink("Reload", "About")
+    @Ajax.ActionLink("Ajax Reload",
+        "AjaxReload",
+        new AjaxOptions()
+        {
+            HttpMethod = "Get",
+            UpdateTargetId = "MyDate",
+            InsertionMode = InsertionMode.Replace
+        })
+</div>
